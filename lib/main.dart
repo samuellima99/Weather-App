@@ -38,6 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int temp;
   List<dynamic> forecast;
   bool show = false;
+  String conditionCode;
 
   var cityController = TextEditingController();
 
@@ -68,6 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    print(conditionCode);
     return SafeArea(
         child: Scaffold(
             body: SingleChildScrollView(
@@ -198,6 +200,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       default:
                         if (snapshot.hasData) {
                           temp = snapshot.data['results']['temp'];
+                          conditionCode =
+                              snapshot.data['results']['condition_code'];
                           forecast = snapshot.data['results']['forecast'];
 
                           return Column(children: [
@@ -223,11 +227,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               ],
                               style: TextStyle(
                                   fontSize: 80.0, fontWeight: FontWeight.bold),
-                            ),
-                            Padding(padding: EdgeInsets.only(top: 20.0)),
-                            Image.asset(
-                              'images/storm.png',
-                              scale: 1.2,
                             ),
                             Padding(padding: EdgeInsets.only(top: 30.0)),
                             Container(
@@ -280,17 +279,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 i++)
                                               Container(
                                                 padding: EdgeInsets.all(16.0),
-                                                width: 120.0,
+                                                width: 140.0,
                                                 height: 80.0,
                                                 color: Colors.white,
                                                 margin: EdgeInsets.only(
                                                     right: 16.0),
                                                 child: Column(
                                                   children: [
-                                                    Image.asset(
-                                                      'images/storm.png',
-                                                      scale: 2.5,
-                                                    ),
                                                     Padding(
                                                         padding:
                                                             EdgeInsets.only(
@@ -397,7 +392,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                                             1),
                                                                   )
                                                                 ],
-                                                              )
+                                                              ),
                                                             ],
                                                           )
                                                         ]),

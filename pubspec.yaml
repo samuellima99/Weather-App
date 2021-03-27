@@ -48,6 +48,18 @@ flutter:
   assets:
     - images/logo.png
     - images/storm.png
+    - images/storm02.png
+    - images/chuva.png
+    - images/tempestadesIsoladas.png
+    - images/tempoFrio.png
+    - images/tempoLimpo.png
+    - images/tempoNublado.png
+    - images/sol.png
+    - images/neblina.png
+    - images/chuvasEspersas.png
+    - images/chuviscos.png
+    - images/ensolarado.png
+    - images/ventania.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
